@@ -7,10 +7,22 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="chriseldridge.caddy.MainActivity">
+    tools:context="chriseldridge.caddy.MainActivity"
+>
 
-    <TextView
+
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:text="ask for advice"
+        android:id="@+id/button"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentStart="false"
+        android:layout_marginTop="43dp"
+        android:layout_alignParentEnd="false"
+        android:layout_centerInParent="true"
+        android:padding="20px"
+        android:background="@color/colorPrimary"
+        android:onClick="QRScanner"
+    />
 </RelativeLayout>
