@@ -41,6 +41,16 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
     public void handleResult(Result rawResult) {
         Toast.makeText(this, rawResult.getText(), Toast.LENGTH_LONG).show();
 
-        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=22d-ZjYn8BE&feature=youtu.be")));
+        String url = "";
+
+        switch(rawResult.getText()) {
+            case "SeverneBlade" :
+                url = "https://www.youtube.com/watch?v=NhHaTqiquv4";
+                break;
+            default :
+                url = "https://www.youtube.com/watch?v=22d-ZjYn8BE&feature=youtu.be";
+        }
+
+        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
     }
 }
