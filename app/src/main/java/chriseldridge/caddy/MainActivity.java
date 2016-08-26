@@ -26,6 +26,14 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
 
         scannerView.startCamera();
     }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+
+        scannerView.stopCamera();
+        setContentView(R.layout.activity_main);
+    }
     
     @Override
     public void handleResult(Result rawResult) {
