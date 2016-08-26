@@ -1,11 +1,11 @@
 package chriseldridge.caddy;
 
-import android.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.content.Intent;
 import android.net.Uri;
+import android.widget.Toast;
 
 import com.google.zxing.Result;
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
@@ -39,11 +39,7 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
     
     @Override
     public void handleResult(Result rawResult) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Scan Result");
-        builder.setMessage(rawResult.getText());
-        AlertDialog alert1 = builder.create();
-        alert1.show();
+        Toast.makeText(this, rawResult.getText(), Toast.LENGTH_LONG).show();
 
         startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=22d-ZjYn8BE&feature=youtu.be")));
     }
